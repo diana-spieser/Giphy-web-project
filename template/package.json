@@ -1,0 +1,17 @@
+{
+  "name": "giphy-web-project",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "keywords": [],
+  "author": "Group 1",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}
