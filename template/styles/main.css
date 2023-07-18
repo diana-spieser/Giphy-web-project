@@ -2,13 +2,13 @@
 
 /* Template styling */
 :root {
-  ---purple: #884dff;
-  ---black: #000;
-  ---giphy-black: #121212;
-  ---white: #fff;
-  ---green: #00ff9a;
-  ---darkerGreen: #04c578;
-  ---paraFontColor: #6e6e6e;
+  --purple: #884dff;
+  --black: #000;
+  --giphy-black: #121212;
+  --white: #fff;
+  --green: #00ff9a;
+  --darkerGreen: #04c578;
+  --paraFontColor: #6e6e6e;
 }
 
 /* Reset */
@@ -22,26 +22,26 @@ html,
 body {
   font-family: "Nexa Bold", sans-serif;
   line-height: 1.7em;
-  background-color: var(---giphy-black);
+  background-color: var(--giphy-black);
   animation: fade-in 1s ease-in;
 
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
 
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateY();
-    }
+  100% {
+    opacity: 1;
+    transform: translateY();
   }
+}
 
 
 a.active {
-  color: var(---purple) !important;
+  color: var(--purple) !important;
 }
 
 p {
@@ -59,12 +59,12 @@ main {
 /* Navbar */
 #navbar {
   background: black;
-  color: var(---white);
+  color: var(--white);
   overflow: auto;
 }
 
 #navbar a {
-  color: var(---white);
+  color: var(--white);
   text-decoration: none;
   user-select: none;
 }
@@ -100,20 +100,21 @@ main {
 
 #navbar ul li a:hover,
 #navbar ul li a.current {
-  background: var(---purple);
+  background: var(--purple);
   color: #fff !important;
 
 }
 
 #main-footer {
-  background: var(---black);
-  color: var(---white);
+  background: var(--black);
+  color: var(--white);
   text-align: center;
   padding: 20px;
   margin-top: 30px;
 }
-#main-footer  .fa-gitlab:hover {
-  color: var(---green)
+
+#main-footer .fa-gitlab:hover {
+  color: var(--green)
 }
 
 /* search bar  */
@@ -127,8 +128,8 @@ main {
 }
 
 .search-bar {
-  background-color: var(---giphy-black);
-  color: var(---white);
+  background-color: var(--giphy-black);
+  color: var(--white);
   padding: 6px 10px;
   width: 250px;
   border: none;
@@ -137,12 +138,12 @@ main {
   cursor: pointer;
   font-size: 1.2em;
   font-weight: bold;
-  border-bottom: var(---green) solid 2px;
+  border-bottom: var(--green) solid 2px;
   transition: 0.3s;
 }
 
 .search-bar::placeholder {
-  color: var(---white);
+  color: var(--white);
 
   font-weight: bold;
   /* transition: 0.2s; */
@@ -153,7 +154,7 @@ main {
   font-size: 2em;
   font-weight: bold;
   transition: 0.3s;
-  border-bottom: var(---purple) solid 2px;
+  border-bottom: var(--purple) solid 2px;
   outline: none;
 }
 
@@ -169,7 +170,7 @@ main {
 
 /* About */
 #about {
-  color: var(---white);
+  color: var(--white);
   padding-bottom: 40px;
   animation: fade-in 1s ease-in;
 
@@ -206,7 +207,7 @@ main {
 .bottom-line {
   height: 2px;
   width: 3rem;
-  background-color: var(---green);
+  background-color: var(--green);
   display: block;
   margin: 0 auto 1rem auto;
 }
@@ -226,12 +227,12 @@ main {
 
 #about p {
   text-align: justify;
-  color: var(---white);
+  color: var(--white);
 }
 
 .highlight {
   font-weight: bold;
-  color: var(---purple);
+  color: var(--purple);
 }
 
 #about .about-image {
@@ -240,7 +241,7 @@ main {
 
 #about .about-text {
   grid-area: about-text;
-  border-left: 3px solid var(---green);
+  border-left: 3px solid var(--green);
   padding: 0.8rem;
 }
 
@@ -278,8 +279,8 @@ main {
 
 #team .data {
   position: absolute;
-  bottom: 0; 
-  background: var(---giphy-black);
+  bottom: 0;
+  background: var(--giphy-black);
   text-align: center;
   width: 90%;
   height: 80px;
@@ -304,14 +305,14 @@ main {
 .data h3 {
   margin: 0 0 5px 0;
   transition: color 0.4s;
-  color: var(---white)
+  color: var(--white)
 }
 
 .data p {
   opacity: 0;
   text-align: justify;
   transition: all 0.2s;
-  color: var(---green)
+  color: var(--green)
 }
 
 #team .card:hover .data p,
@@ -320,7 +321,7 @@ main {
 }
 
 .data a {
-  color: var(---purple);
+  color: var(--purple);
   text-decoration: none;
   padding: 20px;
   opacity: 0
@@ -328,7 +329,7 @@ main {
 
 .data a:hover,
 .card:hover h3 {
-  color: var(---green)
+  color: var(--green)
 }
 
 /* Search gif */
@@ -342,8 +343,8 @@ main {
 
 #no-uploads {
   color: #fff;
-  background-color: var(---giphy-black);
-  border: 1px solid var(---darkerGreen);
+  background-color: var(--giphy-black);
+  border: 1px solid var(--darkerGreen);
   border-radius: 5px;
   margin-top: 10px;
   padding: 30px 20px;
@@ -430,7 +431,7 @@ main {
 
 .trend h2 {
   text-align: center;
-  color: var(---white);
+  color: var(--white);
   font-size: 45px;
   margin: 35px 0;
 }
@@ -447,29 +448,29 @@ main {
 
 #uploads h1 {
   margin-top: 0;
-  color: var(---white)
+  color: var(--white)
 }
 
 
 .upload-text {
   font-weight: 100;
   background: linear-gradient(45deg, rgb(97, 87, 255) 0%, rgb(153, 51, 255) 33%, rgb(97, 87, 255) 66%, rgb(153, 51, 255) 100%) 0px 100% / 300% 300%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-position: 0px 100%;
-    background-size: 300% 300%;
-    animation: gradient-animation 5s infinite linear;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-position: 0px 100%;
+  background-size: 300% 300%;
+  animation: gradient-animation 5s infinite linear;
+}
+
+@keyframes gradient-animation {
+  30% {
+    background-position: 30% 100%;
   }
 
-  @keyframes gradient-animation {
-    30% {
-      background-position: 30% 100%;
-    }
-
-    100% {
-      background-position: 100% 0%;
-    }
+  100% {
+    background-position: 100% 0%;
   }
+}
 
 
 #upload-form {
@@ -523,11 +524,13 @@ main {
   font-size: 14px;
   font-weight: 400;
   line-height: normal;
-  color: var(---purple)
+  color: var(--purple)
 }
+
 #uploads label {
-  color: var(---white);
+  color: var(--white);
 }
+
 input[type="file"]::file-selector-button {
   border: none;
   border-radius: 10px;
@@ -539,7 +542,7 @@ input[type="file"]::file-selector-button {
 }
 
 input[type="file"]::file-selector-button:hover {
-  background-color: var(---darkerGreen);
+  background-color: var(--darkerGreen);
   transition: ease-in .4s;
 }
 
@@ -573,13 +576,13 @@ input[type="radio"]::before {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: var(---white);
+  background-color: var(--white);
   transition: background-color 0.3s ease;
 }
 
 
 input[type="radio"]:checked::before {
-  background-color: var(---green)
+  background-color: var(--green)
 }
 
 
@@ -593,11 +596,11 @@ input[type="radio"]:checked::before {
 }
 
 #favorites h1 {
-  color: var(---white)
+  color: var(--white)
 }
 
 .favorites-box {
-  color: var(---white);
+  color: var(--white);
 }
 
 p.favorites-message {
@@ -606,8 +609,8 @@ p.favorites-message {
 
 .favorites-message {
   color: var(--white);
-  background-color: var(---giphy-black);
-  border: 1px solid var(---darkerGreen);
+  background-color: var(--giphy-black);
+  border: 1px solid var(--darkerGreen);
   border-radius: 5px;
   margin: 20px auto 50px;
   padding: 60px 30px;
@@ -650,8 +653,8 @@ p.favorites-message {
 .notification {
   border-radius: 15px;
   display: none;
-  background-color: var(---darkerGreen);
-  color: var(---giphy-black);
+  background-color: var(--darkerGreen);
+  color: var(--giphy-black);
   padding: 10px;
   text-align: center;
   position: fixed;
@@ -677,7 +680,7 @@ p.favorites-message {
 }
 
 .trending {
-  color: var(---white);
+  color: var(--white);
   font-size: 38px;
   margin-left: 90px;
   margin-bottom: 40px;
@@ -689,25 +692,29 @@ main {
 
 }
 
-.leftContainer{
+.leftContainer {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.leftContainer p{
-  color: var(---paraFontColor)
+
+.leftContainer p {
+  color: var(--paraFontColor)
 }
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
     visibility: visible;
   }
+
   100% {
     opacity: 1;
     visibility: visible;
   }
 }
-.detailedInformation{
+
+.detailedInformation {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -721,9 +728,9 @@ main {
   height: 80vh;
   display: flex;
   justify-content: center;
-  color: var(---white);
+  color: var(--white);
   animation: fadeIn .3s ease-in;
-  box-shadow: 2px 7px 31px -21px rgba(214,214,214,1);
+  box-shadow: 2px 7px 31px -21px rgba(214, 214, 214, 1);
 }
 
 .close {
@@ -732,10 +739,12 @@ main {
   right: 40px;
   font-size: 40px;
 }
-.close:hover{
-  color: var(---paraFontColor);
+
+.close:hover {
+  color: var(--paraFontColor);
   transition: ease-in .2s;
 }
+
 .userDetails {
   display: flex;
   align-items: center;
@@ -786,6 +795,7 @@ main {
   height: 30px;
 
 }
+
 .collapsed {
   height: auto;
 
@@ -798,7 +808,7 @@ main {
 .social i {
   font-size: 20px;
   margin: 5px;
-  color: var(---white);
+  color: var(--white);
 }
 
 .source {
@@ -810,19 +820,19 @@ main {
 }
 
 .source a {
-  color: var(---white);
+  color: var(--white);
 }
 
 .rightContainer {
   margin-left: 30px;
   display: flex;
-flex-direction: column;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.rightContainer p{
-color: var(---paraFontColor);
+.rightContainer p {
+  color: var(--paraFontColor);
 }
 
 .rightContainer img {
@@ -830,7 +840,7 @@ color: var(---paraFontColor);
   width: 30vw;
 }
 
-.btnCollapse{
+.btnCollapse {
 
   display: inline-block;
   outline: none;
@@ -839,8 +849,8 @@ color: var(---paraFontColor);
   border-radius: 3px;
   padding: 0 16px;
   border-radius: 4px;
-  color: var(---white);
-  background: var(---darkerGreen);
+  color: var(--white);
+  background: var(--darkerGreen);
   line-height: 1.15;
   font-size: 12px;
   height: 26px;
@@ -855,7 +865,8 @@ color: var(---paraFontColor);
   transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
-.btnCollapse:hover{
-  background-color: var(---green);
+
+.btnCollapse:hover {
+  background-color: var(--green);
   transition: linear .2s;
 }
