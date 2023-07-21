@@ -20,35 +20,35 @@ import { getFavorites } from '../data/favorites.js';
  */
 export const loadPage = async (page = '') => {
   switch (page) {
-    case HOME:
-      setActiveNav(HOME);
-      displaySearch();
-      clearSearchInput();
-      await renderHome();
-      break;
-    case UPLOADS:
-      setActiveNav(UPLOADS);
-      hideSearch();
-      await renderUploads();
-      break;
-    case FAVORITES:
-      setActiveNav(FAVORITES);
-      displaySearch();
-      clearSearchInput();
-      await renderFavorites();
-      break;
-    case ABOUT:
-      setActiveNav(ABOUT);
-      hideSearch();
-      await renderAbout();
-      break;
-    default:
-      // For unknown routes, redirect to the home page
-      window.history.replaceState({}, '', '/' + HOME);
-      setActiveNav(HOME);
-      displaySearch();
-      clearSearchInput();
-      await renderHome();
+  case HOME:
+    setActiveNav(HOME);
+    displaySearch();
+    clearSearchInput();
+    await renderHome();
+    break;
+  case UPLOADS:
+    setActiveNav(UPLOADS);
+    hideSearch();
+    await renderUploads();
+    break;
+  case FAVORITES:
+    setActiveNav(FAVORITES);
+    displaySearch();
+    clearSearchInput();
+    await renderFavorites();
+    break;
+  case ABOUT:
+    setActiveNav(ABOUT);
+    hideSearch();
+    await renderAbout();
+    break;
+  default:
+    // For unknown routes, redirect to the home page
+    window.history.replaceState({}, '', '/' + HOME);
+    setActiveNav(HOME);
+    displaySearch();
+    clearSearchInput();
+    await renderHome();
   }
 };
 

@@ -16,7 +16,11 @@ export default {
   },
   module: {
     rules: [
-      // Your existing rules...
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      // Add other rules for handling different file types if needed
     ],
   },
   plugins: [

@@ -1,7 +1,8 @@
-/* @import "utils.css"; */
+
 /***************** Font Styles *******************/
+
 @font-face {
-  font-family: 'Nexa Bold';
+  font-family:'Nexa Bold';
   src: url('../fonts/Nexa Bold.woff2') format('woff2'),
     url('../fonts/Nexa Bold.woff') format('woff');
   font-weight: bold;
