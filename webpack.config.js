@@ -6,6 +6,7 @@ import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
 export default {
   mode: 'development',
   entry: './src/index.js',
@@ -15,28 +16,7 @@ export default {
   },
   module: {
     rules: [
-      {
-        test: /\.html$/,
-        use: ['html-loader'],
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-      },
-      {
-        test: /\.(png|jpe?g|gif)$/i,
-        type: 'asset/resource',
-        generator: {
-          filename: 'images/[name][ext]',
-        },
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: 'asset/resource',
-        generator: {
-          filename: 'fonts/[name][ext]',
-        },
-      },
+      // Your existing rules...
     ],
   },
   plugins: [
@@ -54,5 +34,6 @@ export default {
       directory: path.resolve(__dirname, 'dist'),
     },
     open: true,
+    historyApiFallback: true,
   },
 };
