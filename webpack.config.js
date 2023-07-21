@@ -30,6 +30,8 @@ export default {
     new CopyWebpackPlugin({
       patterns: [
         { from: 'images', to: 'images' }, // Copy images from 'images' folder to 'dist/images'
+        { from: 'favicons', to: 'favicons' }, // Copy favicon files from 'favicons' folder to 'dist/favicons'
+        { from: 'fonts', to: 'fonts' }, // Copy font files from 'fonts' folder to 'dist/fonts'
       ],
     }),
   ],
