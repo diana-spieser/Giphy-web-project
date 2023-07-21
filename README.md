@@ -119,8 +119,6 @@ You can work in the `template` folder or create your own **solution** folder and
   - `common/constants.js` - `common` holds resources used by other files, such resources are the constants in `constants.js`. Take a look at the file - remember the rule about no magic strings and numbers, and no hardcoded values?
   -
     - `favorites.js` - the module responsible for adding and removing gifs from favorites. It is based on the browser feature `localStorage`. Even though the implementation is complete, you can research more about the `localStorage` and how it can be useful for storing an retrieving data
-    <!-- - `movies-data.js` - holds the raw movies and categories data. **You do not have direct access to the data**.
-    - `movies.js` - this is the public movies data API which exposes controlled access to the movies and categories data. **You need to use it when you implement the data `request` logic**. -->
   - `events` - holds the core app logic. Event listeners in `index.js` use directly functions exposed in the `events` folder files. The role of those functions is to make a bridge between the data and the views, i.e. a function might have to retrieve all movies matching a search condition, create a view rendering the movies and displaying the created view. Inside the folder you can find:
     - `favorites-events.js` is already implemented for you. Its role is to react to the heart icon - switch the **favorite** status of a gif, i.e. add it to favorites or remove it. Its logic is very similar to the heart icon of post in [Telerik Academy Forum](https://forum.telerikacademy.com/)
     - `helpers.js` is already implemented too. It has some helpers methods including aliasing for `document.querySelector` and `document.querySelectorAll`
@@ -131,13 +129,10 @@ You can work in the `template` folder or create your own **solution** folder and
 
     - `home-trending-gifs-view.js`
     - `search-view.js`
-    - `gifi-view.js`
-    - `about-view.js`
+    - `gif-view.js`
     - `upload-view.js`
-    - `my-uploads-view.js`
     - `favorites-view.js`
-    - `favorites-view.js`
-    -
+    - `about.html`
 <br>
 
 ### 7. App logic flow
@@ -154,17 +149,5 @@ The core app logic is very simple
 5. The view is updated and the user can trigger an new event
 
 You can follow the already implemented navigation event called on elements with the class `nav-link` and specifically how the Home page is loaded. The rest of the events and event handlers follow the same logic.
-
-<br>
-
-
-### 9. Work requirements
-
-
-Explicit listing:
-
-1. Templates/views:
-2. Event functions:
-3. Request service functions:
 
 <br>

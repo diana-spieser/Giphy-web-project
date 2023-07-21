@@ -1,0 +1,168 @@
+/***************** Font Styles *******************/
+@font-face {
+  font-family: 'Nexa Bold';
+  src: url('../fonts/Nexa-Bold.woff2') format('woff2'),
+    url('../fonts/Nexa-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nexa Light';
+  src: url('../fonts/Nexa-Light.woff2') format('woff2'),
+    url('../fonts/Nexa-Light.woff') format('woff');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nexa Regular';
+  src: url('../fonts/Nexa-Regular.woff2') format('woff2'),
+    url('../fonts/Nexa-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+/***************** Containers *******************/
+.container {
+  margin: auto;
+  max-width: 1100px;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  overflow: hidden;
+  padding-left: 50px;
+}
+
+/***************** Padding *******************/
+.py-1 {
+  padding: 10px 0;
+}
+
+.py-2 {
+  padding: 20px 0;
+}
+
+.py-3 {
+  padding: 30px 0;
+}
+
+.text-center {
+  text-align: center;
+}
+/***************** Media Queries *******************/
+/* max-width 768px */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 50px;
+  }
+
+  .nav-container {
+    padding-left: 0;
+  }
+
+  .section-title {
+    margin-top: 30px;
+  }
+
+  .section-title h2 {
+    font-size: 1.5rem;
+  }
+
+  #navbar .logo {
+    display: none;
+  }
+
+  .trending {
+    font-size: 28px !important;
+  }
+
+  #upload-form {
+    width: 100vw !important;
+  }
+
+}
+
+/***************** Mobile *******************/
+@media (max-width: 576px) {
+  .nav-container {
+    padding-left: 0;
+  }
+
+  .logo-container {
+    display: none;
+  }
+
+  .logo-img {
+    display: none;
+  }
+
+  #navbar .logo {
+    display: none;
+  }
+
+  #navbar ul li a {
+    padding: 15px;
+  }
+
+  .trending {
+    font-size: 20px !important;
+  }
+
+  #search::placeholder {
+    display: none !important;
+  }
+
+  .search-bar:focus {
+    max-width: 300px!important;
+  }
+
+  .uploads {
+    padding: 0 !important;
+  }
+
+  #upload-form {
+    width: 100vw !important;
+  }
+
+  .section-title {
+    margin-top: 30px !important;
+    font-size: 1.5rem !important;
+  }
+
+  #about .about-info {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  #about .about-info .about-text {
+    margin: 20px 0 20px 20px !important;
+    padding: 20px 0 20px 20px !important;
+    text-align: center !important;
+    font-size: 0.9rem !important;
+  }
+
+  .about-text p {
+    padding: 0 20px 0 20px !important;
+  }
+
+  #team {
+    flex-direction: column;
+  }
+
+  #team .card {
+    width: 100% !important;
+  }
+
+  #main-footer .container {
+    text-align: center;
+  }
+}
