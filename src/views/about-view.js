@@ -47,8 +47,8 @@ export const toAboutView = () => `
   <div class="data">
     <h3>Diana Spieser</h3>
     <i>Telerik Academy Alpha JS Student</i>
-    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Etiam sedesmi. Consectetur elit placerat mollis donec dolor.</p>
-    <a href="#" class="fa fa-linkedin"></a>
+    <p>At our core, we are a team of dedicated and passionate developers, committed to delivering high-quality solutions </p>
+    <a href="" class="fa fa-linkedin"></a>
     <a href="#" class="fa fa-gitlab"></a>
     <a href="#" class="fa fa-medium"></a>
   </div>
@@ -58,10 +58,10 @@ export const toAboutView = () => `
   <div class="data">
     <h3>Dimo Dimov</h3>
     <i>Telerik Academy Alpha JS Student</i>
-    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Etiam sedesmi. Consectetur elit placerat mollis donec dolor.</p>
-     <a href="#" class="fa fa-linkedin"></a>
-    <a href="#" class="fa fa-gitlab"></a>
-    <a href="#" class="fa fa-medium"></a>
+    <p>We thrive on challenges and are continuously pushing the boundaries of innovation, using the latest technologies create dynamic and user-friendly websites.</p>
+     <a href="https://www.linkedin.com/in/diana-spieser/" class="fa fa-linkedin"></a>
+    <a href="https://gitlab.com/dianaspieser" class="fa fa-gitlab"></a>
+    <a href="https://medium.com/@dianaspieser" class="fa fa-medium"></a>
 
   </div>
 </div>
@@ -70,7 +70,7 @@ export const toAboutView = () => `
   <div class="data">
     <h3>Georgi Naydenov</h3>
     <i>Telerik Academy Alpha JS Student</i>
-    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Etiam sedesmi. Consectetur elit placerat mollis donec dolor.</p>
+    <p>Embracing industry best practices and adhering to strict code standards, we take pride in writing clean, efficient, and maintainable code. Our commitment to excellence ensures that every project is delivered with the highest level of professionalism.</p>
    <a href="#" class="fa fa-linkedin"></a>
     <a href="#" class="fa fa-gitlab"></a>
     <a href="#" class="fa fa-medium"></a>
