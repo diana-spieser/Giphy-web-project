@@ -1,6 +1,9 @@
 import { HOME } from './common/constants.js';
 import { loadPage, renderFavorites } from './events/navigation-events.js';
-import { toggleFavoriteStatus, renderFavoriteStatusDetails } from './events/favorites-events.js';
+import {
+  toggleFavoriteStatus,
+  renderFavoriteStatusDetails,
+} from './events/favorites-events.js';
 import { toSearchView } from './views/search-view.js';
 import { uploadGif } from './events/upload.js';
 import { getElement } from './views/gif-views.js';
@@ -13,8 +16,7 @@ const loadCSS = () => {
 
 loadCSS();
 document.addEventListener('DOMContentLoaded', () => {
-
-  document.addEventListener('click', async event => {
+  document.addEventListener('click', async (event) => {
     /**
      * Nav events
      */
@@ -34,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleFavoriteStatus(event.target.getAttribute('data-gif-id'));
       const detailedInfo = q('.favDetailsWrap');
       detailedInfo.innerHTML = renderFavoriteStatusDetails(
-        event.target.getAttribute('data-gif-id'),
+        event.target.getAttribute('data-gif-id')
       );
     }
     /**
@@ -57,18 +59,19 @@ document.addEventListener('DOMContentLoaded', () => {
     /**
      * Opens modal for detailed gif information
      */
-    if (
-      event.target.closest('.custom-size-gif') ||
-      event.target.closest('.fixed-size-gif') ||
-      event.target.closest('.gif') ||
-      event.target.closest('.grid-item') ||
-      event.target.closest('.gif-container')
-    ) {
+    const swiperWrapper = event.target.closest('#trending-gif');
+    const fixedSizeGif = event.target.closest('.swiper-slide');
+    const gridItem = event.target.closest('.grid-item');
+    const gifContainer = event.target.closest('.gif-container');
+
+    if (swiperWrapper || fixedSizeGif || gridItem || gifContainer) {
       event.preventDefault();
-      const parentElement = event.target.closest('.grid-item');
+      const parentElement =
+        gridItem || swiperWrapper || fixedSizeGif || gifContainer;
       const dataId = parentElement.getAttribute('data-id');
       getElement(dataId);
     }
+
     /**
      * Close modal
      */
@@ -104,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
    * Keydown event for search bar - Enter
    * Keydown event for detailed info modal - Escape
    */
-  document.addEventListener('keydown', async event => {
+  document.addEventListener('keydown', async (event) => {
     if (event.target.classList.contains('search-bar')) {
       if (event.key === 'Enter') {
         event.preventDefault();

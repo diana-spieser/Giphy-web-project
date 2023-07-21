@@ -20,10 +20,11 @@ export const toHomeView = async () => {
     .join('');
 
   return `
-      <div class="trending">Emojis 😀</div>
+    <div class="trending">Emojis 😀</div>
     <div class="trending-gifs">
       <div class="swiper" id="trending-swiper">
         <div class="swiper-wrapper">${renderEmoji}</div>
+        <div class="swiper-pagination"></div> <!-- Add pagination element -->
       </div>
     </div>
     <div class="trending">Trending 🔥</div>

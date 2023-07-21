@@ -64,16 +64,24 @@ export const mapGeneralContainer = (data) =>
  * @param {boolean} isFirst - Whether it's the first GIF container.
  * @return {string} The HTML representation of the GIF container.
  */
+/**
+ * Formats a GIF container HTML element based on the GIF data.
+ *
+ * @param {Object} el - The GIF data.
+ * @param {boolean} isFirst - Whether it's the first GIF container.
+ * @return {string} The HTML representation of the GIF container.
+ */
 export const formatGifContainer = (el, isFirst) => {
   // Add the "randomize" class to the first GIF container
   const randomizeClass = isFirst ? 'randomize' : '';
 
+  // Use optional chaining to check if 'el.images.downsized' exists before accessing 'el.images.downsized.url'
+  const imageUrl = el.images.downsized?.url || '';
+
   return `<div class="grid-item ${randomizeClass}" data-id="${el.id}">
-    <img src="${el.images.original.url}" alt="${el.title}" >
-    <span class="add-fav" data-gif-id="${el.id}">${renderFavoriteStatus(
-    el.id
-  )}</span>
-    </div>`;
+    <img src="${imageUrl}" alt="${el.title}">
+    <span class="add-fav" data-gif-id="${el.id}">${renderFavoriteStatus(el.id)}</span>
+  </div>`;
 };
 
 /**
