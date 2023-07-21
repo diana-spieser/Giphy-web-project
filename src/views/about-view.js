@@ -9,7 +9,7 @@ export const toAboutView = () => `
         <div class="bottom-line"></div>
         <p class="lead"></p>
         <div class="about-info">
-          <img class="about-image" src="images/about.gif" alt="about">
+          <img class="about-image" src="images/logo-team.png" alt="about">
           <div class="about-text">
             <h4>Let's dive into the key features and functionality that our project offers:</h4>
             <p>

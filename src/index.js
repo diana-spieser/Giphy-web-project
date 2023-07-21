@@ -6,8 +6,13 @@ import { uploadGif } from './events/upload.js';
 import { getElement } from './views/gif-views.js';
 import { toggleText, q } from './events/helper.js';
 import { redirectToTrendingView } from './data/render-trending.js';
-import { searchPagination } from './data/search.js';
-import '/styles/main.css';
+
+// Function to dynamically import the main CSS file
+const loadCSS = () => {
+  import('/styles/main.css');
+};
+
+loadCSS();
 document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('click', async event => {
