@@ -1,4 +1,5 @@
 export const toAboutView = () => `
+    <div class="main-container">
   <div id="about">
     <div class="content">
       <div class="about-container">
@@ -79,4 +80,5 @@ export const toAboutView = () => `
       </div>
     </div>
   </div>
+    </div>
 `;

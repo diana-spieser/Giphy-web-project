@@ -609,15 +609,19 @@ main {
 /***************** Favorites *******************/
 .add-fav {
   position: absolute;
-  cursor: pointer;
-  user-select: none;
-  top: 5px;
-  right: 5px;
-  padding: 5px 10px;
-  color: #ffffff;
-  font-size: 35px;
-  opacity: 0;
-  transition: opacity 0.3s;
+    cursor: pointer;
+    user-select: none;
+    top: 0;
+    /* Adjust this value to position the heart icon as needed */
+    right: 0;
+    /* Adjust this value to position the heart icon as needed */
+    padding: 5px 10px;
+    color:#ff0095;
+    font-size: 25px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 100;
+
 }
 
 .gif-container:hover .add-fav {
@@ -628,6 +632,7 @@ main {
   color: #ff0095;
   font-size: 25px;
   animation: pulse 1s infinite;
+  opacity: 1;
 }
 
 @keyframes pulse {
@@ -659,6 +664,7 @@ main {
   justify-content: space-between;
   margin-top: 50px;
   margin-right: 80px;
+  margin-bottom: -80px
 }
 
 .see-more-button,
@@ -1227,3 +1233,70 @@ main {
   animation: pulse 1s infinite;
 }
 /***************** End  *******************/
+
+
+/* grid */
+.grid {
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+}
+
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.grid-sizer,
+.grid-item {
+  width: 19% !important;
+}
+
+.grid-item {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.grid-item-width2 {
+  width: 39.25% !important;
+}
+
+.gutter-sizer {
+  width: 1.25% !important;
+}
+
+.grid-container {
+  max-width: 3000px !important;
+  margin-top: 75px;
+}
+
+.grid-container img {
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+.trending-see-more-container {
+ max-width: 1440px;
+}
+@media screen and (max-width: 599px) {
+
+  /* 2 columns for smaller screens */
+  .grid-sizer,
+  .grid-item {
+    width: 46% !important;
+  }
+
+  .gutter-sizer {
+    width: 4% !important;
+  }
+
+  .grid {
+    max-width: 598px !important;
+    margin: 0 auto !important;
+  }
+
+  .grid-container {
+    max-width: 599px !important;
+    padding-left: 10px;
+  }
+}

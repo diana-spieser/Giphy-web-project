@@ -1,9 +1,9 @@
 import { apiFuncRandomGif } from '../API-requests/API-engine.js';
 import { FULL_HEART } from '../common/constants.js';
 import {
-  mapGifContainer,
   fetchArrOfGifs,
   mapRandomGifContainer,
+  mapGeneralContainer,
 } from '../events/helper.js';
 
 /**
@@ -23,7 +23,7 @@ export const toFavoritesView = async (favorites) => {
       `You don&rsquo;t have any favorites yet! Add to your favs by clicking the ${FULL_HEART} around GIPHY.`;
 
   if (favoriteGifs.length > 0) {
-    favoritesContent = mapGifContainer(favoriteGifs);
+    favoritesContent = mapGeneralContainer(favoriteGifs);
   } else {
     const randomGifPromises = Array.from({ length: 4 }, () =>
       apiFuncRandomGif(),
@@ -56,7 +56,7 @@ export const toFavoritesView = async (favorites) => {
         <h1 class="section-title random-section-title">${title}:</h1>
           <div class="bottom-line"></div>
         <br />
-         <div id="swiper-favs-container">
+        <div id="swiper-favs-container">
 
         <div class="swiper" id="swiper-favs">
           <div class="swiper-wrapper">
@@ -64,7 +64,7 @@ export const toFavoritesView = async (favorites) => {
             <div class="swiper-pagination"></div>
           </div>
         </div>
-       </div>
+      </div>
       </div>
     `;
   }

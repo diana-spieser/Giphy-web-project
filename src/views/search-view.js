@@ -1,5 +1,5 @@
 import { apiFuncSearch } from '../API-requests/API-engine.js';
-import { mapGifContainer, q } from '../events/helper.js';
+import { mapGeneralContainer, q } from '../events/helper.js';
 import { changePage } from '../events/search.js';
 import { searchPagination } from '../data/search.js';
 
@@ -46,8 +46,8 @@ const displayPagination = () => {
       scrollUpButton.innerHTML = '<i class="fas fa-chevron-up"></i>';
       paginationContainer.appendChild(scrollUpButton);
       /**
-      * Scroll to top of page
-      */
+       * Scroll to top of page
+       */
       scrollUpButton.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
@@ -79,7 +79,7 @@ export const toSearchView = async (searchTerm) => {
   searchPagination.search.totalResults = data.length;
   searchPagination.search.totalPages = Math.ceil(data.length / 20);
 
-  const renderGIFs = mapGifContainer(data.slice(0, 20));
+  const renderGIFs = mapGeneralContainer(data.slice(0, 20));
   const container = q('#container');
   const searchGifs = document.createElement('div');
   searchGifs.className = 'search-gifs';

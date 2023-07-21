@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { renderFavoriteStatus } from './favorites-events.js';
 import { apiFuncFetchByID } from '../API-requests/API-engine.js';
 
@@ -26,9 +27,9 @@ export const setActiveNav = (page) => {
   const navs = qs('a.nav-link');
 
   Array.from(navs).forEach((element) =>
-    element.getAttribute('data-page') === page ?
-      element.classList.add('active') :
-      element.classList.remove('active'),
+    element.getAttribute('data-page') === page
+      ? element.classList.add('active')
+      : element.classList.remove('active')
   );
 };
 
@@ -50,26 +51,29 @@ export const mapGifContainer = (data) =>
 export const mapRandomGifContainer = (data) =>
   data.map((el) => formatRandomGifContainer(el)).join('');
 
-/**
- * Maps and joins an array of GIF data to HTML format for the home page GIF container.
- *
- * @param {Object[]} data - The array of GIF data.
- * @return {string} The HTML representation of the home page GIF container.
- */
 export const mapHomePageGifContainer = (data) =>
-  data.map((el) => formatHomePageGifContainer(el)).join('');
+  data.map((el, index) => formatHomePageGifContainer(el, index === 0)).join('');
+
+export const mapGeneralContainer = (data) =>
+  data.map((el) => formatSearchGifContainer(el)).join('');
 
 /**
  * Formats a GIF container HTML element based on the GIF data.
  *
  * @param {Object} el - The GIF data.
+ * @param {boolean} isFirst - Whether it's the first GIF container.
  * @return {string} The HTML representation of the GIF container.
  */
-export const formatGifContainer = (el) => {
-  return `<div class="gif-container" data-id="${el.id}">
-    <img src="${el.images.original.url}" alt="${el.title}" class="gif">
-    <span class="add-fav" data-gif-id="${el.id}">${renderFavoriteStatus(el.id)}</span>
-      </div>`;
+export const formatGifContainer = (el, isFirst) => {
+  // Add the "randomize" class to the first GIF container
+  const randomizeClass = isFirst ? 'randomize' : '';
+
+  return `<div class="grid-item ${randomizeClass}" data-id="${el.id}">
+    <img src="${el.images.original.url}" alt="${el.title}" >
+    <span class="add-fav" data-gif-id="${el.id}">${renderFavoriteStatus(
+    el.id
+  )}</span>
+    </div>`;
 };
 
 /**
@@ -80,8 +84,12 @@ export const formatGifContainer = (el) => {
  */
 export const formatRandomGifContainer = (el) => {
   return ` <div class="swiper-slide" data-id="${el.id}">
-            <img src="${el.images.original.url}" alt="GIF" class="fixed-size-gif">
-                <span class="add-fav" data-gif-id="${el.id}">${renderFavoriteStatus(el.id)}</span>
+            <img src="${
+              el.images.original.url
+            }" alt="GIF" class="fixed-size-gif">
+                <span class="add-fav" data-gif-id="${
+                  el.id
+                }">${renderFavoriteStatus(el.id)}</span>
             </div>`;
 };
 
@@ -93,15 +101,23 @@ export const formatRandomGifContainer = (el) => {
  */
 export const formatHomePageGifContainer = (el) => {
   return ` <div class="swiper-slide" id="trending-gif" data-id="${el.id}">
-            <img src="${
-  el.images.fixed_height.url
-}" alt="GIF" class="custom-size-gif">
-                <span class="add-fav" data-gif-id="${
-  el.id
-}">${renderFavoriteStatus(el.id)}</span>
+            <img src="${el.images.fixed_height.url}" alt="GIF" class="custom-size-gif">
+                <span class="add-fav" data-gif-id="${ el.id}">${renderFavoriteStatus(el.id)}</span>
             </div>`;
 };
 
+/**
+ * Formats a GIF container HTML element based on the GIF data.
+ *
+ * @param {Object} el - The GIF data.
+ * @return {string} The HTML representation of the GIF container.
+ */
+export const formatSearchGifContainer = (el) => {
+  return `<div class="gif-container" data-id="${el.id}">
+    <img src="${el.images.original.url}" alt="${el.title}" class="gif">
+    <span class="add-fav" data-gif-id="${el.id}">${renderFavoriteStatus( el.id)}</span>
+      </div>`;
+};
 
 /**
  * Fetches an array of GIFs asynchronously.
@@ -145,7 +161,6 @@ export const initSwiper = () => {
   });
 };
 
-
 /**
  * Initializes the Swiper slider with responsive breakpoints.
  */
@@ -179,7 +194,7 @@ export const initSwiper2 = () => {
 /**
  * Toggles the visibility of the text container and updates the button text.
  */
-export const toggleText= () => {
+export const toggleText = () => {
   const container = q('.text-container');
 
   if (container.classList.contains('collapsed')) {
@@ -189,4 +204,14 @@ export const toggleText= () => {
     container.classList.add('collapsed');
     q('.btnCollapse').innerHTML = `Read Less`;
   }
+};
+
+// Function to initialize Masonry
+export const initMasonry = () => {
+  const masonry = new Masonry('.grid', {
+    itemSelector: '.grid-item',
+    columnWidth: '.grid-sizer',
+    gutter: '.gutter-sizer',
+    percentPosition: true,
+  });
 };

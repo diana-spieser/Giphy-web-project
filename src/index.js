@@ -5,7 +5,6 @@ import { toSearchView } from './views/search-view.js';
 import { uploadGif } from './events/upload.js';
 import { getElement } from './views/gif-views.js';
 import { toggleText, q } from './events/helper.js';
-import { redirectToTrendingView } from './data/render-trending.js';
 
 // Function to dynamically import the main CSS file
 const loadCSS = () => {
@@ -35,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleFavoriteStatus(event.target.getAttribute('data-gif-id'));
       const detailedInfo = q('.favDetailsWrap');
       detailedInfo.innerHTML = renderFavoriteStatusDetails(
-        event.target.getAttribute('data-gif-id'),
+        event.target.getAttribute('data-gif-id')
       );
     }
     /**
@@ -59,12 +58,14 @@ document.addEventListener('DOMContentLoaded', () => {
      * Opens modal for detailed gif information
      */
     if (
-      event.target.classList.contains('custom-size-gif') ||
-      event.target.classList.contains('fixed-size-gif') ||
-      event.target.classList.contains('gif')
+      event.target.closest('.custom-size-gif') ||
+      event.target.closest('.fixed-size-gif') ||
+      event.target.closest('.gif') ||
+      event.target.closest('.grid-item') ||
+      event.target.closest('.gif-container')
     ) {
       event.preventDefault();
-      const parentElement = event.target.parentNode;
+      const parentElement = event.target.closest('.grid-item');
       const dataId = parentElement.getAttribute('data-id');
       getElement(dataId);
     }
@@ -86,12 +87,12 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleText();
     }
     /**
-     * See more button in home view
-     */
-    if (event.target.classList.contains('see-more-button')) {
-      event.preventDefault();
-      redirectToTrendingView();
-    }
+    //  * See more button in home view
+    //  */
+    // if (event.target.classList.contains('see-more-button')) {
+    //   event.preventDefault();
+    //   redirectToTrendingView();
+    // }
     /**
      * Scroll up button
      */

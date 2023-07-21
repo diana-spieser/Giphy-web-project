@@ -9,7 +9,7 @@ import { toFavoritesView } from '../views/favorites-view.js';
 import { toHomeView } from '../views/home-view.js';
 import { toAboutView } from '../views/about-view.js';
 import { toUploadsView } from '../views/uploads-view.js';
-import { initSwiper, initSwiper2, q, setActiveNav } from './helper.js';
+import { initMasonry, initSwiper, initSwiper2, q, setActiveNav } from './helper.js';
 import { clearSearchInput, displaySearch, hideSearch } from './search.js';
 import { getFavorites } from '../data/favorites.js';
 
@@ -56,10 +56,16 @@ export const loadPage = async (page = '') => {
  * Renders the home page.
  */
 const renderHome = async () => {
-  const container = q(CONTAINER_SELECTOR);
+  const container = document.querySelector('#container'); // Replace '#app' with your container selector
   container.innerHTML = await toHomeView();
+
+  // Initialize Masonry after adding the GIF containers to the DOM
+  initMasonry();
   initSwiper2();
 };
+
+// Call the renderHome function to display the home view
+renderHome();
 
 /**
  * Renders the favorites page.
