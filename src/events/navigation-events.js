@@ -12,6 +12,7 @@ import { toUploadsView } from '../views/uploads-view.js';
 import { initMasonry, initSwiper, initSwiper2, q, setActiveNav } from './helper.js';
 import { clearSearchInput, displaySearch, hideSearch } from './search.js';
 import { getFavorites } from '../data/favorites.js';
+import { getUploads } from '../data/uploads.js';
 
 /**
  * Loads the specified page and performs the necessary actions based on the page parameter.
@@ -87,8 +88,13 @@ const renderAbout = () => {
 /**
  * Renders the uploads page.
  */
+/**
+ * Renders the uploads page.
+ */
 export const renderUploads = async () => {
-  q(CONTAINER_SELECTOR).innerHTML = await toUploadsView();
+  const uploads = getUploads(); // Get the array of uploaded GIFs from local storage
+  const uploadsView = await Promise.resolve(toUploadsView(uploads)); // Pass the uploads array to the toUploadsView function
+  q(CONTAINER_SELECTOR).innerHTML = uploadsView; // Display the rendered uploads view
 };
 
 // Create a function to handle URL changes and trigger page rendering

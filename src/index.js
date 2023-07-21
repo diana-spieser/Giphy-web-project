@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleFavoriteStatus(event.target.getAttribute('data-gif-id'));
       const detailedInfo = q('.favDetailsWrap');
       detailedInfo.innerHTML = renderFavoriteStatusDetails(
-        event.target.getAttribute('data-gif-id')
+        event.target.getAttribute('data-gif-id'),
       );
     }
     /**
