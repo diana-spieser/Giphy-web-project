@@ -24,7 +24,6 @@ export const toHomeView = async () => {
     <div class="trending-gifs">
       <div class="swiper" id="trending-swiper">
         <div class="swiper-wrapper">${renderEmoji}</div>
-        <div class="swiper-pagination"></div> <!-- Add pagination element -->
       </div>
     </div>
     <div class="trending">Trending 🔥</div>
