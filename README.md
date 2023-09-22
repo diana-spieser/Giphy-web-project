@@ -1,11 +1,11 @@
 <img src="https://webassets.telerikacademy.com/images/default-source/logos/telerik-academy.svg" alt="logo" width="300px" style="margin-top: 20px;"/>
 
 # Giphy API Project JS
- By Team 1:  Diana, Dimo & Georgi
- ![teamone](https://res.cloudinary.com/dygywvyiq/image/upload/v1695301687/Capture_d_e%CC%81cran_2023-09-21_a%CC%80_15.07.53_qskym1.png)
+ By Team 1:  Diana Spieser, Dimo Dimov & Georgi Naydenov
+ ![teamone](https://res.cloudinary.com/dygywvyiq/image/upload/v1695366190/Capture_d_e%CC%81cran_2023-09-22_a%CC%80_08.59.49_eg1hsz.png)
  ![teamone](https://res.cloudinary.com/dygywvyiq/image/upload/v1695301565/Capture_d_e%CC%81cran_2023-09-21_a%CC%80_15.04.34_blwwij.png)
  ![teamone](https://res.cloudinary.com/dygywvyiq/image/upload/v1695301564/Capture_d_e%CC%81cran_2023-09-21_a%CC%80_15.04.50_am3tzn.png)
- ![teamone](https://res.cloudinary.com/dygywvyiq/image/upload/v1695301564/Capture_d_e%CC%81cran_2023-09-21_a%CC%80_15.05.37_dwy0b0.png)
+ ![teamone](https://res.cloudinary.com/dygywvyiq/image/upload/v1695366309/Capture_d_e%CC%81cran_2023-09-22_a%CC%80_09.04.55_fp79qd.png)
  ![teamone](https://res.cloudinary.com/dygywvyiq/image/upload/v1695301564/Capture_d_e%CC%81cran_2023-09-21_a%CC%80_15.05.48_wz17tq.png)
  
 
