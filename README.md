@@ -2,6 +2,12 @@
 
 # Giphy API Project JS
  By Team 1:  Diana, Dimo & Georgi
+ ![teamone](https://res.cloudinary.com/dygywvyiq/image/upload/v1695301687/Capture_d_e%CC%81cran_2023-09-21_a%CC%80_15.07.53_qskym1.png)
+ ![teamone](https://res.cloudinary.com/dygywvyiq/image/upload/v1695301565/Capture_d_e%CC%81cran_2023-09-21_a%CC%80_15.04.34_blwwij.png)
+ ![teamone](https://res.cloudinary.com/dygywvyiq/image/upload/v1695301564/Capture_d_e%CC%81cran_2023-09-21_a%CC%80_15.04.50_am3tzn.png)
+ ![teamone](https://res.cloudinary.com/dygywvyiq/image/upload/v1695301564/Capture_d_e%CC%81cran_2023-09-21_a%CC%80_15.05.37_dwy0b0.png)
+ ![teamone](https://res.cloudinary.com/dygywvyiq/image/upload/v1695301564/Capture_d_e%CC%81cran_2023-09-21_a%CC%80_15.05.48_wz17tq.png)
+ 
 
 ### 1. Description
 
