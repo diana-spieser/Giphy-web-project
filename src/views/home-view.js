@@ -1,7 +1,6 @@
-import { apiFuncTrending, apiFuncEmoji } from '../API-requests/API-engine.js';
+import { apiFuncTrending } from '../API-requests/API-engine.js';
 import {
   formatGifContainer,
-  mapHomePageGifContainer,
   q,
   initMasonry,
 } from '../events/helper.js';
@@ -11,21 +10,13 @@ let currentOffset = 0; // Initialize the current offset for infinite scroll
 export const toHomeView = async () => {
   // Fetch initial trending GIFs (30 GIFs) with the current offset
   const initialData = await apiFuncTrending(30, currentOffset);
-  const data2 = await apiFuncEmoji();
-  const renderEmoji = mapHomePageGifContainer(data2);
-
   // Map the trending data to HTML format, applying the "randomize" class to GIFs at even indices
   const renderTrending = initialData
     .map((el, index) => formatGifContainer(el, index % 2 === 0))
     .join('');
 
   return `
-    <div class="trending">Emojis 😀</div>
-    <div class="trending-gifs">
-      <div class="swiper" id="trending-swiper">
-        <div class="swiper-wrapper">${renderEmoji}</div>
-      </div>
-    </div>
+    <div class="trending-gifs"> </div>
     <div class="trending">Trending 🔥</div>
     <div class="grid-container">
       <div class="grid">
